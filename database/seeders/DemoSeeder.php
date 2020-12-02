@@ -38,7 +38,7 @@ class DemoSeeder extends Seeder
                 'uuid' => uuid(),
                 'user_id' => $user->id,
                 'name' => "{$datum->name}'s Team",
-                'personal_team' => true
+                'personal_team' => true,
             ]);
         }
     }
