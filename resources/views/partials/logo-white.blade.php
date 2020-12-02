@@ -1,0 +1,1 @@
+@include('partials.svg.fire', ['class' => 'h-8 w-auto sm:h-10 bg-text-indigo-500 text-white'])
