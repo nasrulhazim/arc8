@@ -2,11 +2,21 @@
 
 arc8 is a boilerplate for starting up a new Laravel project, with pre-configured with common packages. see [`composer.json`](composer.json) for list of packages installed.
 
+## Create New Project
+
+```
+composer create-project nasrulhazim/arc8 app
+```
+
+## Installation
+
+Configure your `.env` accordingly.
+
+Then run `bin/install`.
+
 ## Development
 
 There is few pre-built features provided in `arc8`.
-
-### Reload Commands
 
 ```
 # Clear all caches
@@ -19,13 +29,7 @@ bin/clear-cache
 bin/reload-db
 ```
 
-### Installation
-
-First time setup you may want to run `bin/install` - but make sure your `.env` is update accordingly before run the script.
-
-## Production
-
-### Scheduler
+## Scheduler
 
 Setup the cronjob as following format:
 
