@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 if type "composer" > /dev/null; then
+	echo "🏗️  Updating backend dependencies..."
 	composer update --quiet --no-ansi --no-interaction >/dev/null
 	if [[ `git status --porcelain` ]]; then
 	  git add composer.json composer.lock
@@ -13,7 +14,8 @@ else
 fi
 
 if type "yarn" > /dev/null; then
-	yarn upgrade >/dev/null
+	echo "🏗️  Updating frontend dependencies..."
+	yarn upgrade --silent >/dev/null
 	bin/compile-asset
 else  
 	echo "☠️ You need to install Yarn in order to upgrade frontend dependencies" 

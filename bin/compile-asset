@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 
 if type "npm" > /dev/null; then
-	npm run prod >/dev/null
+	echo "🎨 Compiling frontend assets for production..."
+	npm run prod --silent >/dev/null
 	if [[ `git status --porcelain` >/dev/null ]]; then
 	  git add public/ resources/js resources/scss yarn.lock webpack.mix.js tailwind.config.js package-lock.json
 	  bin/commit ui "Compiled Frontend Assets for Production"
@@ -10,5 +11,5 @@ if type "npm" > /dev/null; then
 else  
 	MESSAGE="☠️ You need to install NPM in order to install frontend dependencies." 
 fi
-
+clear
 echo $MESSAGE
