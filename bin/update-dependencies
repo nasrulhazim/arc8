@@ -5,7 +5,7 @@ if type "composer" > /dev/null; then
 	composer update --quiet --no-ansi --no-interaction >/dev/null
 	if [[ `git status --porcelain` ]]; then
 	  git add composer.json composer.lock
-	  bin/commit dependencies "Dependencies updated"
+	  bin/commit dependencies "Update backend dependencies"
 	else
 	  echo "🎉 You have successfully update the dependencies!"
 	fi
@@ -16,9 +16,12 @@ fi
 if type "yarn" > /dev/null; then
 	echo "🏗️  Updating frontend dependencies..."
 	yarn upgrade --silent >/dev/null
-	bin/compile-asset
+	if [[ `git status --porcelain` ]]; then
+	  git add yarn.lock
+	  bin/commit dependencies "Update frontend dependencies"
+	else
+	  echo "🎉 You have successfully update the dependencies!"
+	fi
 else  
 	echo "☠️ You need to install Yarn in order to upgrade frontend dependencies" 
 fi
-
-clear
