@@ -15,7 +15,7 @@ class NotificationTest extends TestCase
     /** @test */
     public function hasHelpers()
     {
-        $this->assertTrue(file_exists(app_path('Support/notification.php')));
+        $this->assertTrue(file_exists(base_path('support/notification.php')));
         $this->assertTrue(function_exists('notificationDrivers'));
         $this->assertTrue(function_exists('notificationEnabled'));
     }

@@ -15,11 +15,6 @@
                     <x-jet-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-jet-nav-link>
-                    @role('superadmin|administrator')
-                        <x-jet-nav-link href="{{ \Laravel\Nova\Nova::path() }}">
-                            {{ __('Administration') }}
-                        </x-jet-nav-link>
-                    @endrole
                 </div>
             </div>
 
@@ -129,11 +124,6 @@
             <x-jet-responsive-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
                 {{ __('Dashboard') }}
             </x-jet-responsive-nav-link>
-            @role('superadmin|administrator')
-                <x-jet-responsive-nav-link href="{{ \Laravel\Nova\Nova::path() }}">
-                    {{ __('Administration') }}
-                </x-jet-responsive-nav-link>
-            @endrole
         </div>
 
         <!-- Responsive Settings Options -->
